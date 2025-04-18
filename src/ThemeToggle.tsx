@@ -1,9 +1,9 @@
 import React from 'react';
-import { useThemeContext } from './contexts/ThemeContext';
+import { useThemeContext } from './contexts/ThemeContext'; // Update the import path
 import { useStateContext } from './contexts/StateContext';
 
 const ThemeToggle: React.FC = () => {
-  const { theme, toggleTheme } = useThemeContext();
+  const { theme, toggleTheme } = useThemeContext(); // Use the correct properties
   const { user } = useStateContext();
 
   return (

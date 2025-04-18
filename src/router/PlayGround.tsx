@@ -1,13 +1,13 @@
 import { Suspense, useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { ToastContainer } from "react-toastify";
-import { useStateContext } from "../contexts/StateContext";
-import AuthLayout from "../layouts/AuthLayout";
+import { useStateContext } from "@/contexts/StateContext";
+import AuthLayout from "@/layouts/AuthLayout";
 import AuthRouter from "./AuthRouter";
-import GuestLayout from "../layouts/GuestLayout";
+import GuestLayout from "@/layouts/GuestLayout";
 import GuestRouter from "./GuestRouter";
-import { auth } from "../firebase";
+import { ToastContainer } from "react-toastify";
+import { auth } from "@/firebase";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 // const LoadingSpinner = () => (
     

@@ -1,7 +1,6 @@
-
+import { useMobileContext } from '@/contexts/MobileContext';
+import ThemeToggle from '@/ThemeToggle';
 import React, { useEffect, ReactNode } from 'react'
-import { useMobileContext } from '../contexts/MobileContext';
-import ThemeToggle from '../ThemeToggle';
 
 
 interface GuestLayoutProps {

@@ -7,6 +7,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 const GuestRouter: React.FC = () => {
     return (
         <Routes>
+            {/* Add your guest routes here */}
             <Route index element={<LandingPage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />

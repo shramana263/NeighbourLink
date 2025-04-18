@@ -6,9 +6,8 @@ import { toast } from "react-toastify";
 import { FaArrowAltCircleLeft, FaBell, FaCamera, FaMapMarkerAlt, FaUserAlt } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useMobileContext } from "../../contexts/MobileContext";
+import { useMobileContext } from "@/contexts/MobileContext";
 import { MdAccountCircle } from "react-icons/md";
-import { uploadFileToS3 } from "../../utils/aws/aws";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -80,7 +79,8 @@ function Register() {
         let photoURL = "";
         try {
           if (photo) {
-            photoURL = await uploadFileToS3(photo, `${user.uid}_profile_image`)
+            // photoURL = await uploadFileToS3(photo, `${user.uid}_profile_image`)
+            console.log(photoURL)
           }
         } catch (error) {
           console.log(error);

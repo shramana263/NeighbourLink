@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { auth, db } from "../../firebase";
 import { doc, getDoc, collection, getDocs, query, orderBy } from "firebase/firestore";
-import PostList from "../PostCard/PostList";
-import SharedResourceList from "../PostCard/SharedResourceList ";
 import Sidebar from "./structures/Sidebar";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
@@ -174,7 +172,7 @@ function Profile() {
         </div>
 
         {/* Content Grid */}
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-4 w-full mx-auto px-2 py-4 md:px-0 md:py-2">
+        {/* <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-4 w-full mx-auto px-2 py-4 md:px-0 md:py-2">
           {filteredContent.length > 0 ? (
             filteredContent.map((item) =>
               item.type === "post" ? (
@@ -192,7 +190,7 @@ function Profile() {
               <AiOutlineLoading3Quarters size={80} className="animate-spin" />
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

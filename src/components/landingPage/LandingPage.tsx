@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './LandingPage.css';
 import { motion } from 'framer-motion';
-import { auth } from '../../firebase';
+import { auth } from '@/firebase';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const LandingPage = () => {
