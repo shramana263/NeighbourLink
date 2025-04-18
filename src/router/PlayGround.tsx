@@ -7,6 +7,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import AuthRouter from "./AuthRouter";
 import GuestLayout from "../layouts/GuestLayout";
 import GuestRouter from "./GuestRouter";
+import { auth } from "../firebase";
 
 // const LoadingSpinner = () => (
     
@@ -17,11 +18,11 @@ function PlayGround() {
     const { user } = useStateContext();
 
     useEffect(() => {
-        // const unsubscribe = auth.onAuthStateChanged(() => {
-        //     setLoading(false);
-        // });
+        const unsubscribe = auth.onAuthStateChanged(() => {
+            setLoading(false);
+        });
 
-        // return () => unsubscribe();
+        return () => unsubscribe();
     }, []);
 
     if (loading) {
