@@ -1,4 +1,3 @@
-import { useMobileContext } from '@/contexts/MobileContext';
 import ThemeToggle from '@/ThemeToggle';
 import React, { useEffect, ReactNode } from 'react'
 
@@ -9,7 +8,6 @@ interface GuestLayoutProps {
 
 const GuestLayout: React.FC<GuestLayoutProps> = ({ children }) => {
   //   const navigate = useNavigate();
-  const { isMini } = useMobileContext()
   useEffect(() => {
     console.log("I am in GuestLayout")
   })
@@ -17,12 +15,9 @@ const GuestLayout: React.FC<GuestLayoutProps> = ({ children }) => {
   return (
     <>
       <div className={`flex w-full`}>
-        {
-          !isMini &&
-          <div className='fixed bottom-4 right-4 z-50'>
-            <ThemeToggle />
-          </div>
-        }
+        <div className='fixed bottom-4 right-4 z-50'>
+          <ThemeToggle />
+        </div>
 
         <div className='w-full'>
           {/* <h3>GuestLayout</h3> */}

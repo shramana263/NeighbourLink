@@ -1,6 +1,6 @@
 import Login from '@/components/authPage/Login';
 import Register from '@/components/authPage/Register';
-import LandingPage from '@/components/landingpage/LandingPage';
+import LandingPage from '@/components/landingPage/LandingPage';
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 

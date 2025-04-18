@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import { auth, db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { MdDeleteForever } from "react-icons/md";
 import PostCardDelete from "./modal/PostCardDelete";
-import { useNavigate } from "react-router-dom";
 
 interface SharedResource {
   id:string;
@@ -33,7 +33,6 @@ const SharedResourceList = ({ resource, setUpdated }: SharedResourceListProps) =
   const [newComment, setNewComment] = useState("");
   const [userName, setUserName] = useState("");
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-  const navigate=useNavigate();
 
   const shortOptions: Intl.DateTimeFormatOptions = {
     year: 'numeric' as const,
@@ -97,6 +96,12 @@ const SharedResourceList = ({ resource, setUpdated }: SharedResourceListProps) =
     }
   };
 
+  // Function to handle sending a request
+  const handleSendRequest = () => {
+    toast.success("Request sent successfully!", {
+      position: "top-center",
+    });
+  };
 
   return (
     <div className="w-full p-3 ">
@@ -162,9 +167,9 @@ const SharedResourceList = ({ resource, setUpdated }: SharedResourceListProps) =
         {/* Send Request Button */}
         <button
           className="w-full px-3 py-1.5 md:px-4 md:py-2 bg-green-600 text-white font-medium rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mb-3 md:mb-4 text-sm md:text-base"
-          onClick={()=>navigate(`/post/${resource.id}`)}
+          onClick={handleSendRequest}
         >
-          View Details
+          Ask For Resource
         </button>
         {/* Comments Section */}
         <div className="mt-3 md:mt-4">
