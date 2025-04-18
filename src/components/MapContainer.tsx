@@ -11,8 +11,7 @@ interface MapContainerProps {
   maximumSelection?: number;
 }
 
-const MAP_API_KEY = "QecvU1TynUVDAeMWIDCl49ESu7yguGCgf5X34TPE";
-// const MAP_API_KEY = (import.meta.env.VITE_OLA_MAP_APIKEY as string);
+const MAP_API_KEY = import.meta.env.VITE_OLA_MAP_APIKEY as string;
 
 const olaMaps = new OlaMaps({
   apiKey: MAP_API_KEY,
