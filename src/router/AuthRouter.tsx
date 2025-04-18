@@ -1,6 +1,7 @@
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import React, { useEffect, useState, Suspense } from 'react';
 import { auth } from '../firebase';
+import LandingPage from '@/components/LandingPage';
 
 const LoadingFallback = () => (
     <div className="flex justify-center items-center h-screen">
@@ -20,7 +21,7 @@ const AuthRouter: React.FC = () => {
     return (
         <Suspense fallback={<LoadingFallback />}>
             <Routes>
-                {/* <Route index element={<Landing />} /> */}
+                <Route index element={<LandingPage />} />
             </Routes>
         </Suspense>
     );
