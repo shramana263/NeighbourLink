@@ -1,5 +1,6 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
 import React, { useEffect, useState, Suspense } from 'react';
+import { auth } from '../firebase';
 
 const LoadingFallback = () => (
     <div className="flex justify-center items-center h-screen">
@@ -11,9 +12,9 @@ const AuthRouter: React.FC = () => {
     const [user, setUser] = useState<any>();
 
     useEffect(() => {
-        // auth.onAuthStateChanged((user) => {
-        //     setUser(user);
-        // });
+        auth.onAuthStateChanged((user) => {
+            setUser(user);
+        });
     });
 
     return (
