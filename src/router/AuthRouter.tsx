@@ -1,11 +1,13 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { auth } from "../firebase";
 import Home from '@/pages/Home';
 import LandingPage from '@/components/landingPage/LandingPage';
 
-
-
+// const Profile = lazy(() => import('@/components/authPage/Profile'));
+const ResourceForm = lazy(() => import('@/components/Forms/ResourceForm'));
+// const LandingPage = lazy(() => import('@/components/landingpage/LandingPage'));
+const PostDetailsPage = lazy(() => import('@/components/post/PostDetailsPage'));
 
 const LoadingFallback = () => (
   <div className="flex justify-center items-center h-screen">
@@ -26,10 +28,19 @@ const AuthRouter: React.FC = () => {
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
         <Route index element={<Home />} />
+        
+        
         <Route path="/home" element={<LandingPage />} />
+        <Route path="/resource/offer" element={<ResourceForm userId={user?.uid}/>} />
+        <Route path="/resource/need" element={<ResourceForm userId={user?.uid}/>} />
+        <Route path="/post/:id" element={<PostDetailsPage/>} />
+        
+        
+        
+        
         <Route path='/register' element={<Navigate to="/"/>}/>
         <Route path='/login' element={<Navigate to="/"/>}/>
-       
+        
       </Routes>
     </Suspense>
   );

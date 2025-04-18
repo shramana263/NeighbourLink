@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .env
 .env.production
+package-lock.json
+node_modules
